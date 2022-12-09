@@ -24,8 +24,21 @@ function getCurrentDate(){
 }
 
 // makeMagic()
+startServer()
 setInterval(makeMagic, 7200000);
-
+async function startServer(){
+    easyvk({
+        username: SOMESHIT(VALVALOVAL),
+        password: SOMESHIT(OVALVALVAL),
+        //sessionFile: path.join(__dirname, '.my-session')
+    }).then(async vk => {
+        let letter = await vk.call('messages.send', {
+            peer_id: vk.session.user_id,
+            message: 'сервер запущен!',
+            random_id: easyvk.randomId()
+        });
+    })
+}
 async function makeMagic(){
     easyvk({
         username: SOMESHIT(VALVALOVAL),
