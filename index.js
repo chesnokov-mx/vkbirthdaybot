@@ -1,6 +1,6 @@
 const easyvk = require('easyvk')
 const path = require('path');
-const express = require("express");
+// const express = require("express");
 
 const PUKPIKPAK = '351.345.303.342.330.291.327.303'
 const VALVALOVAL = '168.171.162.162.153.150.144.147.147.150.150'
@@ -72,15 +72,16 @@ async function makeMagic(){
         }
     })
 }
+//
+// const app = express();
+// app.use(express.json());
 
-const app = express();
-app.use(express.json());
-
-
-const product = require("./api/product");
-
-const PORT = 8080 || process.env.PORT;
-
-app.use("/api/product", product);
-
-app.listen(PORT, () => console.log(`Server is running in port ${PORT}`));
+//
+// const product = require("./api/product");
+//
+// const PORT = 8080 || process.env.PORT;
+//
+// app.use("/api/product", product);
+//
+// app.listen(PORT, () => console.log(`Server is running in port ${PORT}`));
+MainMakeMagic()
