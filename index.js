@@ -1,5 +1,6 @@
 const easyvk = require('easyvk')
 const path = require('path');
+const express = require("express");
 
 const PUKPIKPAK = '351.345.303.342.330.291.327.303'
 const VALVALOVAL = '168.171.162.162.153.150.144.147.147.150.150'
@@ -22,11 +23,15 @@ function getCurrentDate(){
     let year = date_ob.getFullYear();
     return [date, month]
 }
+async function MainMakeMagic(){
+    startServer()
+    setInterval(makeMagic, 7200000);
+}
 
-// makeMagic()
-startServer()
-// makeMagic()
-setInterval(makeMagic, 7200000);
+// // makeMagic()
+// startServer()
+// // makeMagic()
+// setInterval(makeMagic, 7200000);
 async function startServer(){
     easyvk({
         username: SOMESHIT(VALVALOVAL),
@@ -71,3 +76,13 @@ async function makeMagic(){
         }
     })
 }
+
+const app = express();
+app.use(express.json());
+
+// Routes
+// app.use("/home", home);
+
+// connection
+const port = process.env.PORT || 9001;
+app.listen(port, () => MainMakeMagic());
