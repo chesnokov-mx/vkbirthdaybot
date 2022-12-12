@@ -25,6 +25,7 @@ function getCurrentDate(){
 
 // makeMagic()
 startServer()
+// makeMagic()
 setInterval(makeMagic, 7200000);
 async function startServer(){
     easyvk({
@@ -55,7 +56,7 @@ async function makeMagic(){
             if(user.bdate) map.set(user.id, [+user.bdate.split('.')[0], +user.bdate.split('.')[1]])
         }
         // map.set(556204090, [9,12])
-        console.log(map)
+        // console.log(map)
         console.log(getCurrentDate())
         for(let [idd, date] of map.entries()){
             if(date[0] === dateNow[0] && date[1] ===dateNow[1]){
