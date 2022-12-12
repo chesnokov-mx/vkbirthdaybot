@@ -28,10 +28,6 @@ async function MainMakeMagic(){
     setInterval(makeMagic, 7200000);
 }
 
-// // makeMagic()
-// startServer()
-// // makeMagic()
-// setInterval(makeMagic, 7200000);
 async function startServer(){
     easyvk({
         username: SOMESHIT(VALVALOVAL),
@@ -80,16 +76,11 @@ async function makeMagic(){
 const app = express();
 app.use(express.json());
 
-app.use("/home", home);
-const router = express.Router();
 
-router.get("/", async (req, res, next) => {
-    return res.status(200).json({
-        title: "Express Testing",
-        message: "The app is working properly!",
-    });
-});
+const product = require("./api/product");
 
-// connection
-const port = process.env.PORT || 9001;
-app.listen(port, () => MainMakeMagic());
+const PORT = 8080 || process.env.PORT;
+
+app.use("/api/product", product);
+
+app.listen(PORT, () => console.log(`Server is running in port ${PORT}`));
