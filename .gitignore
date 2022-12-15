@@ -1,0 +1,11 @@
+vksession
+.env
+.my-session
+.idea
+node_modules
+package-lock.json
+.DS_Store
+
+birthdays.json
+.idea
+
