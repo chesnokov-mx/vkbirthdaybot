@@ -1,3 +1,4 @@
+//maybeFinalVersion
 const easyvk = require('easyvk')
 const path = require('path');
 const fs = require("fs");
