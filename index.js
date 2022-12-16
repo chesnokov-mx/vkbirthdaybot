@@ -83,11 +83,15 @@ async function makeDB(){
                 counter: 0
             }
         }
+        mainmap['515131974'] = {
+            day: 17,
+            month: 12,
+            counter: 0
+        }
         let json = JSON.stringify(mainmap)
         fs.writeFile("birthdays.json", json, 'utf8', function (err) {
             if (err) return console.log(err);
         })
     })
 }
-
 MainMakeMagic()
